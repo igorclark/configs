@@ -1,0 +1,10 @@
+syntax on
+set ai
+set ts=4
+set sw=4
+set backspace=2
+set nocompatible
+command C :r ! cloc --exclude-ext=d ./apps/*/*src | tail -n +6
+autocmd BufEnter *.c hi Comment ctermfg=darkcyan
+autocmd BufEnter *.erl hi Comment ctermfg=darkgreen
+hi Comment ctermfg=darkgreen
