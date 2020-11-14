@@ -77,10 +77,10 @@
 # ############################################################### #
 
 # focus window
-ctrl + alt - h : yabai -m window --focus west
-ctrl + alt - j : yabai -m window --focus south
-ctrl + alt - k : yabai -m window --focus north
-ctrl + alt - l : yabai -m window --focus east
+ctrl + alt + cmd - h : yabai -m window --focus west
+ctrl + alt + cmd - j : yabai -m window --focus south
+ctrl + alt + cmd - k : yabai -m window --focus north
+ctrl + alt + cmd - l : yabai -m window --focus east
 
 # swap managed window
 ctrl + cmd - h : yabai -m window --swap west
@@ -105,10 +105,30 @@ shift + alt - l : \
     yabai -m window --resize right:20:0 ; \
     yabai -m window --resize left:20:0
 
+shift + alt + cmd - h : \
+    yabai -m window --resize left:-100:0 ; \
+    yabai -m window --resize right:-100:0
+
+shift + alt + cmd - j : \
+    yabai -m window --resize bottom:0:100 ; \
+    yabai -m window --resize top:0:100
+
+shift + alt + cmd - k : \
+    yabai -m window --resize top:0:-100 ; \
+    yabai -m window --resize bottom:0:-100
+
+shift + alt + cmd - l : \
+    yabai -m window --resize right:100:0 ; \
+    yabai -m window --resize left:100:0
+
 # Float and center window
 shift + alt - c : \
 	yabai -m window --toggle float; \
 	yabai -m window --grid 4:4:1:1:2:2
+
+# Rotate windows clockwise and anticlockwise
+ctrl + shift - l : yabai -m space --rotate 90
+ctrl + shift - r : yabai -m space --rotate 270
 
 # Equalize size of windows
 shift + alt - 0 : yabai -m space --balance
