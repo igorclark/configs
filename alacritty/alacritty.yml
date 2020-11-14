@@ -37,6 +37,9 @@ window:
     x: 2
     y: 2
 
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
 
@@ -77,19 +80,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 8
+  # faux_multiplier: 3
 
 # Font configuration (changes require restart)
 font:
@@ -182,7 +173,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x656565'
+    black:   '0xb7b7b7'
     red:     '0xff3334'
     green:   '0x00A600'
     yellow:  '0x999900'
@@ -233,7 +224,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -249,9 +240,6 @@ selection:
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
-
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style
@@ -441,7 +429,7 @@ key_bindings:
   - { key: Copy,                    action: Copy                         }
   - { key: H,        mods: Command, action: Hide                         }
   - { key: Q,        mods: Command, action: Quit                         }
-  - { key: W,        mods: Command, action: Quit                         }
+  - { key: W,        mods: Command, chars: ""                            }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
